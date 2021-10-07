@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #69a1fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka One', cursive;
+}
+
+.game-area main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 500px;
+    height: 500px;
+    padding: 1rem;
+    background-color: #ffffff;
+    grid-gap: 7px;
+    position: relative;
+}
+
+.game-area .overlay {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.game-area .box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 3px;
+}
+
+.game-area .box .field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e3e3e3;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.game-area .box .field.active, .game-area .box .field.active:hover {
+    cursor: auto;
+    color: white;
+    background-color: #2879ff;
+}
+
+.game-area .box .field:hover {
+    background-color: #d0c4e8;
+}
+
+.game-area .title, .start-modal .title, .end-modal .title {
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+.game-area .time {
+    background-color: white;
+    margin-bottom: 5px;
+    padding: 10px 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.game-area .time h3 {
+    color: #afbec2;
+    margin: 0;
+    text-align: right;
+}
+
+.game-area .button-area {
+    display: flex;
+}
+
+.game-area .button-area .button {
+    font-size: 1.5rem;
+    color: #247cfe;
+    cursor: pointer;
+    text-align: left;
+}
+
+.game-area .button.play {
+    display: none;
+}
+
+.start-modal, .end-modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    z-index: 100;
+}
+
+.start-modal .title, .end-modal .title {
+    font-size: 6rem;
+    color: #247cfe;
+}
+
+.start-modal .modal-inner, .end-modal .modal-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start-modal .play-button, .end-modal .play-again-button {
+    padding: .5em 2em;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: inherit;
+    border: none;
+    background-color: #247cfe;
+    color: white;
+    letter-spacing: 4px;
+    box-shadow: 0 5px 0 #0051ff;
+    cursor: pointer;
+    outline: none;
+}
+
+.start-modal .play-button:active, .end-modal .play-again-button:active {
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+.end-modal {
+    display: none;
+}
+
+.end-modal .title {
+    color: #2879ff;
+}
+
+.end-modal .time {
+    margin-bottom: 3rem;
+}
+
+.end-modal .time h3 {
+    margin: 0;
+}
+
+.end-modal .time-played {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.end-modal .play-again-button {
+    background-color: #ff655b;
+    box-shadow: 0 5px 0 #ff513a;
+}
